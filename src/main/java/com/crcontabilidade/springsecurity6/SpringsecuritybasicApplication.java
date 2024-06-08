@@ -1,4 +1,4 @@
-package com.crcontabilidade.springsecuritybasic;
+package com.crcontabilidade.springsecurity6;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
