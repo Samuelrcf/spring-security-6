@@ -34,6 +34,6 @@ public class CrContabilidadeUserDetails implements UserDetailsService{
 			authorities = new ArrayList<>();
 			authorities.add(new SimpleGrantedAuthority(customer.getRole()));
 		}
-		return new User(username,password,authorities);
+		return new User(userName,password,authorities);
 	}
 }
