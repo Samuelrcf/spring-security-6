@@ -31,16 +31,17 @@ public class CrContabilidadeUsernamePasswordAuthenticationProvider implements Au
 		String username = authentication.getName();
 		String pwd = authentication.getCredentials().toString();
 		Customer customer = customerRepository.findByEmail(username);
-		if(customer!=null) {
-			if(passwordEncoder.matches(pwd, username)) {
+		if (customer != null) {
+			if (passwordEncoder.matches(pwd, customer.getPwd())) {
 				List<GrantedAuthority> authorities = new ArrayList<>();
 				authorities.add(new SimpleGrantedAuthority(customer.getRole()));
 				return new UsernamePasswordAuthenticationToken(username, pwd, authorities);
-			}else {
+			} else {
 				throw new BadCredentialsException("Invalid password.");
 			}
-		}else {
+		} else {
 			throw new BadCredentialsException("No user registered with this details.");
+		}
 	}
 
 	@Override
