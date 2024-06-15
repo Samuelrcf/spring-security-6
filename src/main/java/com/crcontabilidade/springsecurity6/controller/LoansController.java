@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crcontabilidade.springsecurity6.model.Loans;
-import com.crcontabilidade.springsecurity6.reposiroty.LoanRepository;
+import com.crcontabilidade.springsecurity6.repository.LoanRepository;
 
 @RestController
 public class LoansController {

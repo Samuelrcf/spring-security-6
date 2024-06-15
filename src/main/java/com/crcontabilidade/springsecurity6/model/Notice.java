@@ -10,13 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "notice_details")
+@Table(name = "notice_detail")
 public class Notice {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	@Column(name = "notice_id")
-	private int noticeId;
+	private int id;
 
 	@Column(name = "notice_summary")
 	private String noticeSummary;
@@ -37,11 +36,11 @@ public class Notice {
 	private Date updateDt;
 
 	public int getNoticeId() {
-		return noticeId;
+		return id;
 	}
 
 	public void setNoticeId(int noticeId) {
-		this.noticeId = noticeId;
+		this.id = noticeId;
 	}
 
 	public String getNoticeSummary() {

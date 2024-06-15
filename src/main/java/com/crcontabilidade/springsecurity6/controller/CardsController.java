@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crcontabilidade.springsecurity6.model.Cards;
-import com.crcontabilidade.springsecurity6.reposiroty.CardsRepository;
+import com.crcontabilidade.springsecurity6.repository.CardsRepository;
 
 @RestController
 public class CardsController {

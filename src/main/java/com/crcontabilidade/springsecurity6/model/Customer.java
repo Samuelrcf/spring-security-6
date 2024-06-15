@@ -1,5 +1,7 @@
 package com.crcontabilidade.springsecurity6.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
@@ -13,7 +15,6 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "customer_id")
     private int id;
 
     private String name;
@@ -29,6 +30,7 @@ public class Customer {
     private String role;
 
     @Column(name = "create_dt")
+    @CreationTimestamp
     private String createDt;
 
     public int getId() {

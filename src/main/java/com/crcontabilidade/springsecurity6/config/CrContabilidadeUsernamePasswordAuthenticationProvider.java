@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.crcontabilidade.springsecurity6.model.Customer;
-import com.crcontabilidade.springsecurity6.reposiroty.CustomerRepository;
+import com.crcontabilidade.springsecurity6.repository.CustomerRepository;
 
 @Component
 public class CrContabilidadeUsernamePasswordAuthenticationProvider implements AuthenticationProvider {

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crcontabilidade.springsecurity6.model.Notice;
-import com.crcontabilidade.springsecurity6.reposiroty.NoticeRepository;
+import com.crcontabilidade.springsecurity6.repository.NoticeRepository;
 
 @RestController
 public class NoticesController {

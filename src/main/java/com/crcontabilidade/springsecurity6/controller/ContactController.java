@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crcontabilidade.springsecurity6.model.Contact;
-import com.crcontabilidade.springsecurity6.reposiroty.ContactRepository;
+import com.crcontabilidade.springsecurity6.repository.ContactRepository;
 
 @RestController
 public class ContactController {

@@ -1,4 +1,4 @@
-package com.crcontabilidade.springsecurity6.reposiroty;
+package com.crcontabilidade.springsecurity6.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

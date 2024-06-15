@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crcontabilidade.springsecurity6.model.Customer;
-import com.crcontabilidade.springsecurity6.reposiroty.CustomerRepository;
+import com.crcontabilidade.springsecurity6.repository.CustomerRepository;
 
 @RestController
 public class LoginController {

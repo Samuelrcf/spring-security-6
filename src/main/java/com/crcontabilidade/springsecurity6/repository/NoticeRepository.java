@@ -1,4 +1,4 @@
-package com.crcontabilidade.springsecurity6.reposiroty;
+package com.crcontabilidade.springsecurity6.repository;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import com.crcontabilidade.springsecurity6.model.Notice;
 @Repository
 public interface NoticeRepository extends CrudRepository<Notice, Long> {
 	
-	@Query(value = "from Notice n where CURDATE() BETWEEN noticBegDt AND noticEndDt")
+	@Query(value = "SELECT n FROM Notice n WHERE CURRENT_DATE BETWEEN n.noticBegDt AND n.noticEndDt")
 	List<Notice> findAllActiveNotices();
 
 }

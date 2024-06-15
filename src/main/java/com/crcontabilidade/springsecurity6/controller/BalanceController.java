@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crcontabilidade.springsecurity6.model.AccountTransactions;
-import com.crcontabilidade.springsecurity6.reposiroty.AccountTransactionsRepository;
+import com.crcontabilidade.springsecurity6.repository.AccountTransactionsRepository;
 
 @RestController
 public class BalanceController {
