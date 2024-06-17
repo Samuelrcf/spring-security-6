@@ -8,12 +8,11 @@ import jakarta.persistence.Table;
 import java.sql.Date;
 
 @Entity
-@Table(name = "contact_messages")
+@Table(name = "contact_message")
 public class Contact {
 
 	@Id
-	@Column(name = "contact_id")
-	private String contactId;
+	private String id;
 
 	@Column(name = "contact_name")
 	private String contactName;
@@ -29,11 +28,11 @@ public class Contact {
 	private Date createDt;
 
 	public String getContactId() {
-		return contactId;
+		return id;
 	}
 
 	public void setContactId(String contactId) {
-		this.contactId = contactId;
+		this.id = contactId;
 	}
 
 	public String getContactName() {

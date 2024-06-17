@@ -10,12 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "cards")
+@Table(name = "card")
 public class Cards {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private int cardId;
+	private int id;
 
 	@Column(name = "customer_id")
 	private int customerId;
@@ -39,11 +39,11 @@ public class Cards {
 	private Date createDt;
 
 	public int getCardId() {
-		return cardId;
+		return id;
 	}
 
 	public void setCardId(int cardId) {
-		this.cardId = cardId;
+		this.id = cardId;
 	}
 
 	public int getCustomerId() {
