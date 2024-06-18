@@ -46,7 +46,9 @@ public class ProjectSecurityConfig {
 				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
 		.addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
 		.authorizeHttpRequests((requests)->requests
-			.requestMatchers("/myAccount","/myBalance","/myLoans","/myCards","/user").authenticated()
+			.requestMatchers("/myAccount","/myLoans","/myCards").hasRole("USER")
+			.requestMatchers("/myBalance").hasAnyRole("USER","ADMIN")
+			.requestMatchers("/user").authenticated()
 			.requestMatchers("/notices","/register","/contact","/error").permitAll())
 		.formLogin(Customizer.withDefaults())
 		.httpBasic(Customizer.withDefaults());

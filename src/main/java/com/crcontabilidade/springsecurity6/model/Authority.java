@@ -9,7 +9,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="authotiries")
+@Table(name="authorities")
 public class Authority {
 
 	@Id
