@@ -16,7 +16,10 @@ import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
+import com.crcontabilidade.springsecurity6.filter.AuthoritiesLoggingAfterFilter;
+import com.crcontabilidade.springsecurity6.filter.AuthoritiesLoggingAtFilter;
 import com.crcontabilidade.springsecurity6.filter.CsrfCookieFilter;
+import com.crcontabilidade.springsecurity6.filter.RequestValidationBeforeFilter;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -45,6 +48,9 @@ public class ProjectSecurityConfig {
 		.csrf((csrf) -> csrf.csrfTokenRequestHandler(requestHandler).ignoringRequestMatchers("/register")
 				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
 		.addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
+		.addFilterBefore(new RequestValidationBeforeFilter(), BasicAuthenticationFilter.class)
+		.addFilterAfter(new AuthoritiesLoggingAtFilter(), BasicAuthenticationFilter.class)
+		.addFilterAfter(new AuthoritiesLoggingAfterFilter(), BasicAuthenticationFilter.class)
 		.authorizeHttpRequests((requests)->requests
 			.requestMatchers("/myAccount","/myLoans","/myCards").hasRole("USER")
 			.requestMatchers("/myBalance").hasAnyRole("USER","ADMIN")
